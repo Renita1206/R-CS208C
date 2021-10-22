@@ -18,6 +18,7 @@
 - print(a)   
 - x <- 10 assigns value 10 to variable x
 - %% for modulus
+- x <<- 3; It forces x to be global
 
 ## Vectors  
 - combine function -c()  
@@ -96,46 +97,57 @@ Code	Value
 - thedate = ISOdate(2005,10,21,18,47,22)
         format(thedate,'%A, %B %d, %Y %H:%M:%S')
 
-### Functions, environments, dates
-mean(x)
-median(x)
-sd(x)
-var(x)
-cor(x, y)
-cov(x, y)
+
+### Statistic Functions
+- mean(x)
+- median(x)
+- sd(x)
+- var(x)
+- cor(x, y)
+- cov(x, y)
+- floor(2.13)
 
 
-x <<- 3; It forces x to be global
+## Functions
 f <- function(n,p) sqrt(p*(1-p)/n)
-name <- readline(prompt="Enter your name: ")
-w<-read.table("D:\\R Programming\\Class Materials\\DataSets\\wine.csv", header = FALSE, sep=",")
-head(w)
-tail(w)
-View(w)
-write.table(w,"Path")
 
+## Reading Input
+- name <- readline(prompt="Enter your name: ")
+- w<-read.table("path.csv", header = FALSE, sep=",")
+        head(w)
+        tail(w)
+        View(w)
+- write.table(w,"Path")
+
+## If condition
 if (test_expression) {
 statement
 }
 
+## For loop
 for(i in 1:10) {
 table=num*i;
 print(table);
 }
 
-i <- 1
+## While loop
 while (i < 6) {
 print(i)
 i = i+1
 }
 
-break
-next
-repeat
+## Jump statements
+- break
+- next
+- repeat
+
+## Strings
+paste("Everybody", "loves", "stats.", sep="")
+cat("The zero occurs at", 2*pi, "radians.", "\n")
 
 
 
 
 
 
-
+->TO DO environments, dates
