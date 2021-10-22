@@ -17,6 +17,7 @@
 - class(z) returns type  
 - print(a)   
 - x <- 10 assigns value 10 to variable x
+- %% for modulus
 
 ## Vectors  
 - combine function -c()  
@@ -45,6 +46,92 @@
 - anyNA(x) return TRUE/FALSE 
 - mean(x, na.rm=TRUE) ignores NA values to calculate mean  
 
+## Matrix  
+- m<-matrix(c(1,2,3,4,5,6), nrow=2, ncol=3, dimnames = list(c("a","b"),c("A","B","C")))
+- attributes(m) returns dimensions and column names of matrix
+- cbind(l1,l2)  => column  bind
+- rbind(l1,l2)  => row bind
+- m[rownumber,columnnumber] to access element
+- diag(m) returns diagonal
+- rowSums(m) returns sum of elements in each row
+- colSums(m) returns sum of elements in each row
+
+## Dataframes
+- d<-data.frame(id=l1,name=l2)
+- names(d)<-c("columnname1","columname2")
+- rownames(d) returns row names
+- colnames(d) returns name of columns
+- summary(d)
+- d$id
+
+## Lists
+- l<-list("a",1,2,3)
+- vector.a<-unlist(list.a)
+
+## Some Useful Functions  
+- length(obj) - number of elements
+- str(object) - structure of object
+- names(object) - names
+- ls() - lists current objects
+- rm(object) - delete an object
+
+## Factors
+- facts<-factor(data) 
+- table(data) - unique values and number of occurrences
+- summary(facts) - same as table
+- nlevels(facts) - number of levels (unique values)
+
+## Date
+
+Code	Value
+%d	Day of the month (decimal number)
+%m	Month (decimal number)
+%b	Month (abbreviated)
+%B	Month (full name)
+%y	Year (2 digit)
+%Y	Year (4 digit)
+
+- as.Date('22JUN01',format='%d%b%y')  
+- To extract the components of the dates, the weekdays, months, days or quarters functions can be used.
+- thedate = ISOdate(2005,10,21,18,47,22)
+        format(thedate,'%A, %B %d, %Y %H:%M:%S')
+
+### Functions, environments, dates
+mean(x)
+median(x)
+sd(x)
+var(x)
+cor(x, y)
+cov(x, y)
+
+
+x <<- 3; It forces x to be global
+f <- function(n,p) sqrt(p*(1-p)/n)
+name <- readline(prompt="Enter your name: ")
+w<-read.table("D:\\R Programming\\Class Materials\\DataSets\\wine.csv", header = FALSE, sep=",")
+head(w)
+tail(w)
+View(w)
+write.table(w,"Path")
+
+if (test_expression) {
+statement
+}
+
+for(i in 1:10) {
+table=num*i;
+print(table);
+}
+
+i <- 1
+while (i < 6) {
+print(i)
+i = i+1
+}
+
+break
+next
+repeat
 
 
 
