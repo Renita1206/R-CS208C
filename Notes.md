@@ -1,4 +1,5 @@
 ### What is R?
+- object oriented programming environment
 - interpreted computer language  
 - flexible graphical environment  
   
@@ -82,6 +83,7 @@
 - summary(facts) - same as table
 - nlevels(facts) - number of levels (unique values)
 
+
 ## Date
 
 Code	Value
@@ -92,7 +94,12 @@ Code	Value
 %y	Year (2 digit)
 %Y	Year (4 digit)
 
-- as.Date('22JUN01',format='%d%b%y')  
+- as.Date('22JUN01',format='%d%b%y') 
+- as.numeric()
+- The POSIXct class stores date/time values as the number of seconds since January 1, 1970.
+- The POSIXlt class stores them as a list with elements for second, minute, hour, day, month, and year, among others
+- difftime(d1,d2,units='weeks')
+- seq(as.Date('1976-7-4'),by='days',length=10)
 - To extract the components of the dates, the weekdays, months, days or quarters functions can be used.
 - thedate = ISOdate(2005,10,21,18,47,22)
         format(thedate,'%A, %B %d, %Y %H:%M:%S')
@@ -117,6 +124,9 @@ f <- function(n,p) sqrt(p*(1-p)/n)
         head(w)
         tail(w)
         View(w)
+- readLines(), source() and load()
+
+- writeLines(), dump(), save() and serialize()
 - write.table(w,"Path")
 
 ## If condition
@@ -145,9 +155,79 @@ i = i+1
 paste("Everybody", "loves", "stats.", sep="")
 cat("The zero occurs at", 2*pi, "radians.", "\n")
 
+## Debugging
+- traceback() - call stack, lists out function calls
+- debug(function name) - flagged for debugging, line by line, n,c,q and where
+- trace - to make minor modifications without modifying funtions and re-sourcing, to track down errors
+   trace(func_name, code to insert, at=x, print=F)
+        optimiztion routines - nlm, optim
+        optim(100000, nLL, method = "BFGS", x = pp) -> minimize -ve log likelihood
+- warnings() - display warnings
+- browser() - suspend execution so user can browse local environment
+- recover() - suspend execution of a function in one location but then browse a previous function
+
+## Combinations and samples
+- choose(n,k) - to select k out of n 
+- combn(items,k) - combination of n items taken k at a time
+- to select random numbers - 
+        - runif(1, min=-1, max=100)
+        - rnorm(1, mean=10, sd=10)
+        - rbinom(1, size=10, prob=0.5)
+        - rpois(1, lambda=10)
+        - rexp(1, rate=0.1)
+        - rgamma(1, shape=2, rate=0.1)
+- set.seed(1) 
+- sample(vector, n) - generate a sample of n elements
+- sample(set, n, replace=TRUE) - generate a random sequence from given set
+- sample(vector) - provides permutations
+
+## Probability Distributions for Discrete Variable
+- dbinom(7, size=10, prob=0.5) simple probability
+- pbinom(7, size=10, prob=0.5) cumulative probabiliy
+        => for right tail - lower.tail = FALSE
+- dgeom(x, prob)
+- dpois(x, lambda)
+
+## Probability Distribution for Continous Variables
+- pnorm(66, mean, sd)
+
+## Probability to Quantiles
+- qnorm(0.025)
+- qbinom(p, size, prob)
+- qgeom(p, prob)
+- qpois(p, lambda)
+- others - qt, qexp, qgamma, qchisq
+
+## Plotting Graphs
+- plot(x, dnorm(x))
+- plot(x, dunif(x,min=2,max=4), main="title",type='l', lty="twodash", ylim=ylim, ylab="y axis title", xlab="x axis title")
+- hist, bosxplot, curve, qqnorm 
+- low-level graphic functions - points, lines, abline, segments, polygon, text
+- plot(Petal.Length, Petal.Width, pch=as.integer(Species))
+- legend(x, y, labels)
+- coplot(y ~ x | f) - conditioning plot
+- confidence intervals in bar plots
+>library(gplots)
+> barplot2(x, plot.ci=TRUE, ci.l=lower, ci.u=upper, col=colors)
+- par(mfrow=c(2,2))
+
+
+## Regression Line
+> m <- lm(y ~ x)
+> plot(y ~ x)
+> abline(m)
+
+## PCA
+- Principal component analysis is an unsupervised learning technique and it is used to reduce the dimension of the data with minimum loss of information
+- prcmp(dataframe, scale)
+- without prcmp
+        matrix = matrix(C(x,y,z)) where x=csv$col_name-mean(x)/sd(x)
+        > m = cov(matrix_form)
+        > eigenV = eigen(m)
+
+## Eigen values
+- e<-eigen(A)
 
 
 
-
-
-->TO DO environments, dates
+->environments, null hypothesis to testing two samples for same distribution (9.5 to 9.20)
