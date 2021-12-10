@@ -228,6 +228,13 @@ cat("The zero occurs at", 2*pi, "radians.", "\n")
 ## Eigen values
 - e<-eigen(A)
 
+## Environments
+- env<-new.env() - to create an environment
+- assign("basketball", 30, env) - to assign a value to a variable in environment env
+- env$basketball OR get("basketball",env) - to get value 
+- l<-as.list(env) - list of environment variables
+- exists(basketball,env) - to check if variable exists in environment
 
 
-->environments, null hypothesis to testing two samples for same distribution (9.5 to 9.20)
+
+->null hypothesis to testing two samples for same distribution (9.5 to 9.20)
