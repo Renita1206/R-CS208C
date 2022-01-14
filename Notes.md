@@ -126,6 +126,7 @@ f <- function(n,p) sqrt(p*(1-p)/n)
         View(w)
 - readLines(), source() and load()
 
+## Writing
 - writeLines(), dump(), save() and serialize()
 - write.table(w,"Path")
 
@@ -201,7 +202,7 @@ cat("The zero occurs at", 2*pi, "radians.", "\n")
 ## Plotting Graphs
 - plot(x, dnorm(x))
 - plot(x, dunif(x,min=2,max=4), main="title",type='l', lty="twodash", ylim=ylim, ylab="y axis title", xlab="x axis title")
-- hist, bosxplot, curve, qqnorm 
+- hist, boxplot, curve, qqnorm 
 - low-level graphic functions - points, lines, abline, segments, polygon, text
 - plot(Petal.Length, Petal.Width, pch=as.integer(Species))
 - legend(x, y, labels)
